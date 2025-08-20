@@ -1,32 +1,99 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { LogIn, User, Mail, Wallet } from 'lucide-react';
 
-function Login({onLogin}) {
-    const[name, setName] = useState("");
-    const[email, setEmail] = useState("");
-    
-    const handlesubmit=(e) =>{
-        e.preventDefault();
-        onLogin(name,email);
-        
+function Login({ onLogin }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    if (name && email) {
+      onLogin(name, email);
     }
+  };
+
   return (
-    <div className='flex items-center justify-center min-h-screen w-full bg-[#291b3b]  flex-col'>
-    <div className='bg-[#553f6f] p-8 rounded-2xl shadow-lg w-full max-w-md'>
-    <h2 className='text-3xl font-bold text-center text-white mb-6'>Login</h2>
-    <form className='space-y-4'onSubmit={handlesubmit}>
-        <div>
-            <label className='block text-sm font-bold  text-[#FFFFFF] mb-2' htmlFor="name">Name</label>
-            <input className='w-full px-4 py-2 rounded-lg bg-[#A9A9A9] text-white placeholder-[#4A4A4A] focus:outline-none focus:ring-2 focus:ring-purple-600'type='text' placeholder='Enter your name' value={name} onChange={(e) => setName(e.target.value)} required/>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
+        {/* Logo/Header */}
+        <div className="text-center mb-8 slide-in">
+          <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-3xl mb-6 shadow-2xl">
+            <Wallet className="w-12 h-12 text-white" />
+          </div>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent mb-2">
+            Expense Tracker
+          </h1>
+          <p className="text-white/60 text-lg">
+            Track your expenses with ease
+          </p>
         </div>
-        <div>
-            <label className='block text-sm font-bold text-[#FFFFFF] mb-2'>Email</label>
-            <input className="w-full px-4 py-2 rounded-lg bg-[#A9A9A9] text-white placeholder-[#4A4A4A] focus:outline-none focus:ring-2" type='email' placeholder='Enter your email' onChange={(e)=>setEmail(e.target.value)} value={email} required/>
+
+        {/* Login Form */}
+        <div className="glass-card rounded-3xl p-8 shadow-2xl slide-in">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="p-2 bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl">
+              <LogIn className="w-5 h-5 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-white">Welcome Back</h2>
+          </div>
+
+          <form onSubmit={handlesubmit} className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium text-white/80 mb-2">
+                Full Name
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <User className="w-5 h-5 text-white/60" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Enter your full name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="input-field pl-12"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-white/80 mb-2">
+                Email Address
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Mail className="w-5 h-5 text-white/60" />
+                </div>
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="input-field pl-12"
+                  required
+                />
+              </div>
+            </div>
+
+            <button type="submit" className="button-primary mt-8">
+              <div className="flex items-center justify-center gap-2">
+                <LogIn className="w-5 h-5" />
+                Log In
+              </div>
+            </button>
+          </form>
+
+          {/* Footer */}
+          <div className="mt-6 text-center">
+            <p className="text-white/60 text-sm">
+              Start managing your finances today
+            </p>
+          </div>
         </div>
-        <button type='submit' className='w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition font-bold'>Login</button>    
-        </form>
-    </div>
+      </div>
     </div>
   );
 }
 
-export default Login
+export default Login;
