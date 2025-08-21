@@ -50,12 +50,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: transparent;
 }
 button:focus,
 button:focus-visible {
@@ -71,17 +72,44 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: transparent;
   }
 }
 
 .input-field{
-  @apply w-full rounded-xl bg-white/10 border border-white/20
-  text-white placeholder:text-white/60 focus:outline-none 
-  focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200;
+  @apply py-3 w-full rounded-xl bg-white/10 border border-gray-400
+  text-gray-600 placeholder:text-gray-400 focus:outline-none 
+  focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200;
+}
+
+.input-field1{
+  @apply py-3 w-full rounded-xl bg-white/10 border border-white/20
+  text-white placeholder:text-gray-400 focus:outline-none 
+  focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200;
 }
 
   .button-primary {
     @apply w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white py-3 px-6 rounded-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105;
   }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg border border-gray-200 p-6;
+  }
+  
+  .fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
+  
   

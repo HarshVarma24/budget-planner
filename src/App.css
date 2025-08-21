@@ -1,4 +1,4 @@
-html, body, #root {
+/* html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -14,8 +14,7 @@ html, body, #root {
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
+/* .App-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,6 +22,6 @@ html, body, #root {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-
+ 

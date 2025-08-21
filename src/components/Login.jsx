@@ -47,7 +47,7 @@ function Login({ onLogin }) {
                   placeholder="Enter your full name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="input-field pl-12 py-2"
+                  className="input-field1 pl-12 py-2"
                   required
                 />
               </div>
@@ -66,7 +66,7 @@ function Login({ onLogin }) {
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="input-field pl-12 py-2"
+                  className="input-field1 pl-12 py-2"
                   required
                 />
               </div>
