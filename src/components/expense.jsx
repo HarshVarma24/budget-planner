@@ -79,7 +79,7 @@ function Expense({ expenses, setExpenses }) {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="input-field"
+            className="input-field pl-5"
           >
             <option value="">Select Category</option>
             {categories.map((category, index) => (

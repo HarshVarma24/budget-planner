@@ -6,7 +6,7 @@ const[input, setInput] = useState("");
 
 const handlesubmit = (e) =>{
     e.preventDefault();
-    setbudget(input);
+    setbudget(Number(input));
     setInput("");
 };
 
